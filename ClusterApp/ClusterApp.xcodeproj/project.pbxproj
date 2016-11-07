@@ -16,6 +16,9 @@
 		52034C0F1DCCBD5B002B0F31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52034C0D1DCCBD5B002B0F31 /* LaunchScreen.storyboard */; };
 		52034C1A1DCCBD5B002B0F31 /* ClusterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52034C191DCCBD5B002B0F31 /* ClusterAppTests.m */; };
 		52034C251DCCBD5B002B0F31 /* ClusterAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52034C241DCCBD5B002B0F31 /* ClusterAppUITests.m */; };
+		520E6F611DD0361300B07C24 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520E6F601DD0361300B07C24 /* QuartzCore.framework */; };
+		520E6F631DD03C4100B07C24 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520E6F621DD03C4100B07C24 /* MapKit.framework */; };
+		520E6F661DD03E3600B07C24 /* ContactUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520E6F651DD03E3600B07C24 /* ContactUsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		52034C201DCCBD5B002B0F31 /* ClusterAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClusterAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52034C241DCCBD5B002B0F31 /* ClusterAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClusterAppUITests.m; sourceTree = "<group>"; };
 		52034C261DCCBD5B002B0F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520E6F601DD0361300B07C24 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		520E6F621DD03C4100B07C24 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		520E6F641DD03E3600B07C24 /* ContactUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsController.h; sourceTree = "<group>"; };
+		520E6F651DD03E3600B07C24 /* ContactUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520E6F631DD03C4100B07C24 /* MapKit.framework in Frameworks */,
+				520E6F611DD0361300B07C24 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +96,7 @@
 				52034C181DCCBD5B002B0F31 /* ClusterAppTests */,
 				52034C231DCCBD5B002B0F31 /* ClusterAppUITests */,
 				52034BFA1DCCBD5B002B0F31 /* Products */,
+				520E6F5F1DD0361300B07C24 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +123,8 @@
 				52034C101DCCBD5B002B0F31 /* Info.plist */,
 				52034C081DCCBD5B002B0F31 /* ClusterApp.xcdatamodeld */,
 				52034BFC1DCCBD5B002B0F31 /* Supporting Files */,
+				520E6F641DD03E3600B07C24 /* ContactUsController.h */,
+				520E6F651DD03E3600B07C24 /* ContactUsController.m */,
 			);
 			path = ClusterApp;
 			sourceTree = "<group>";
@@ -141,6 +153,15 @@
 				52034C261DCCBD5B002B0F31 /* Info.plist */,
 			);
 			path = ClusterAppUITests;
+			sourceTree = "<group>";
+		};
+		520E6F5F1DD0361300B07C24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				520E6F621DD03C4100B07C24 /* MapKit.framework */,
+				520E6F601DD0361300B07C24 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520E6F661DD03E3600B07C24 /* ContactUsController.m in Sources */,
 				52034C041DCCBD5B002B0F31 /* ViewController.m in Sources */,
 				52034C011DCCBD5B002B0F31 /* AppDelegate.m in Sources */,
 				52034C0A1DCCBD5B002B0F31 /* ClusterApp.xcdatamodeld in Sources */,
@@ -511,6 +533,7 @@
 				52034C2B1DCCBD5B002B0F31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52034C2C1DCCBD5B002B0F31 /* Build configuration list for PBXNativeTarget "ClusterAppTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +542,7 @@
 				52034C2E1DCCBD5B002B0F31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52034C2F1DCCBD5B002B0F31 /* Build configuration list for PBXNativeTarget "ClusterAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +551,7 @@
 				52034C311DCCBD5B002B0F31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
