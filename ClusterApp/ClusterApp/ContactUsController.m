@@ -9,6 +9,7 @@
 #import "ContactUsController.h"
 
 @interface ContactUsController ()
+- (IBAction)enquiryButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 
@@ -76,4 +77,21 @@
         self.addressLabel.text = [NSString stringWithFormat:@"%@",self.rajAddress];
     }
 }
+- (IBAction)enquiryButton:(id)sender
+{
+    
+    if ([self.segmentedControl selectedSegmentIndex]==0) 
+    {
+    UIApplication *application = [UIApplication sharedApplication];
+    [application openURL:[NSURL URLWithString:@"tel:8123990421"] options:@{} completionHandler:nil];
+    }
+    else{
+        UIApplication *application = [UIApplication sharedApplication];
+        [application openURL:[NSURL URLWithString:@"tel:9880995143"] options:@{} completionHandler:nil];
+        
+    }
+    
+    
+    
+     }
 @end

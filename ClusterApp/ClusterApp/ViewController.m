@@ -46,9 +46,12 @@
     [self.sliderImage startAnimating];
     
     
+    
+}
+-(void)viewWillAppear:(BOOL)animated
+{
     [self runSpinAnimationOnView:self.logoImage duration:10 rotations:1 repeat:5];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
