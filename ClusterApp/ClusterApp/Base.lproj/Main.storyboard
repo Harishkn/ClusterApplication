@@ -488,7 +488,7 @@
         <!--Refer Friend-->
         <scene sceneID="6wg-bZ-pf8">
             <objects>
-                <viewController id="oRq-cv-35m" customClass="RefferViewController" sceneMemberID="viewController">
+                <viewController id="oRq-cv-35m" customClass="About" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gYG-Rw-Frf"/>
                         <viewControllerLayoutGuide type="bottom" id="jCy-QD-NUZ"/>
@@ -506,30 +506,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Send Invitation"/>
                                 <connections>
-                                    <action selector="sendSms:" destination="oRq-cv-35m" eventType="touchUpInside" id="D3X-LW-QIB"/>
+                                    <action selector="sendToFriends:" destination="oRq-cv-35m" eventType="touchUpInside" id="OUZ-OG-yUp"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BN9-SI-pYO">
-                                <rect key="frame" x="16" y="158" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BN9-SI-pYO" firstAttribute="centerX" secondItem="sMn-Up-I7k" secondAttribute="centerX" id="AwX-Tl-0XL"/>
                             <constraint firstItem="sMn-Up-I7k" firstAttribute="top" secondItem="gYG-Rw-Frf" secondAttribute="bottom" constant="8" id="CCp-25-1Dz"/>
-                            <constraint firstItem="BN9-SI-pYO" firstAttribute="leading" secondItem="p4k-hU-IZf" secondAttribute="leadingMargin" id="hEn-zr-zHQ"/>
-                            <constraint firstItem="BN9-SI-pYO" firstAttribute="top" secondItem="sMn-Up-I7k" secondAttribute="bottom" constant="8" symbolic="YES" id="hcD-l5-uUT"/>
                             <constraint firstItem="sMn-Up-I7k" firstAttribute="centerX" secondItem="p4k-hU-IZf" secondAttribute="centerX" id="r3i-Gx-WQG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Refer Friend" id="smK-BV-Ugc"/>
-                    <connections>
-                        <outlet property="mobileNumber" destination="BN9-SI-pYO" id="LbA-yC-5DF"/>
-                        <outlet property="sendSms" destination="sMn-Up-I7k" id="bAV-wJ-NW8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6X-4V-4iN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -671,7 +658,7 @@
         <!--AboutUs-->
         <scene sceneID="Uml-TX-8oR">
             <objects>
-                <viewController id="vLy-MP-pNa" sceneMemberID="viewController">
+                <viewController id="vLy-MP-pNa" customClass="AboutUsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kCW-C0-8PQ"/>
                         <viewControllerLayoutGuide type="bottom" id="5T9-ju-bMQ"/>
@@ -708,21 +695,39 @@
                                 <rect key="frame" x="0.0" y="342" width="375" height="325"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7ds-0P-AlD">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="96" height="76"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="DLt-0s-EPp">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="DLt-0s-EPp" customClass="AboutCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fx1-Qx-cfe">
+                                                    <rect key="frame" x="8" y="0.0" width="88" height="76"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="fx1-Qx-cfe" secondAttribute="bottom" id="QoG-v4-bie"/>
+                                            <constraint firstItem="fx1-Qx-cfe" firstAttribute="top" secondItem="DLt-0s-EPp" secondAttribute="top" id="Svo-8l-sAl"/>
+                                            <constraint firstAttribute="trailing" secondItem="fx1-Qx-cfe" secondAttribute="trailing" id="fMM-P2-34q"/>
+                                            <constraint firstItem="fx1-Qx-cfe" firstAttribute="leading" secondItem="DLt-0s-EPp" secondAttribute="leadingMargin" id="ymi-gy-JAq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="displayImage" destination="fx1-Qx-cfe" id="tiE-79-3p3"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vLy-MP-pNa" id="8Xz-jk-z9x"/>
+                                    <outlet property="delegate" destination="vLy-MP-pNa" id="U7H-zS-CGh"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
