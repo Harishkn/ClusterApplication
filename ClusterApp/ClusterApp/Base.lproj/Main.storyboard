@@ -488,6 +488,7 @@
         <!--Refer Friend-->
         <scene sceneID="6wg-bZ-pf8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6X-4V-4iN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="oRq-cv-35m" customClass="About" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gYG-Rw-Frf"/>
@@ -518,7 +519,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Refer Friend" id="smK-BV-Ugc"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u6X-4V-4iN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2684" y="2042.4287856071965"/>
         </scene>
@@ -611,12 +611,9 @@
                                     <constraint firstAttribute="height" constant="160" id="SF1-s9-lOB"/>
                                 </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYx-KQ-etq">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYx-KQ-etq">
                                 <rect key="frame" x="108" y="410" width="158" height="86"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="158" id="asu-jh-2FJ"/>
-                                    <constraint firstAttribute="height" constant="86" id="kHp-wJ-1JU"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Enquiry">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -632,11 +629,9 @@
                         <constraints>
                             <constraint firstItem="KHB-na-y4t" firstAttribute="top" secondItem="TrA-8c-qyN" secondAttribute="bottom" constant="8" id="02M-zY-OHM"/>
                             <constraint firstItem="fqz-xl-jGw" firstAttribute="leading" secondItem="4hN-c0-0hH" secondAttribute="leadingMargin" id="KWr-8G-hGd"/>
-                            <constraint firstItem="VYx-KQ-etq" firstAttribute="centerX" secondItem="4hN-c0-0hH" secondAttribute="centerX" id="Rip-sr-UzZ"/>
                             <constraint firstItem="blj-Lc-7MJ" firstAttribute="trailing" secondItem="4hN-c0-0hH" secondAttribute="trailingMargin" id="Vnj-Ro-QWh"/>
                             <constraint firstItem="blj-Lc-7MJ" firstAttribute="top" secondItem="fqz-xl-jGw" secondAttribute="bottom" constant="8" id="XOX-Kg-owX"/>
                             <constraint firstItem="fqz-xl-jGw" firstAttribute="trailing" secondItem="4hN-c0-0hH" secondAttribute="trailingMargin" id="lUB-3y-LYa"/>
-                            <constraint firstItem="VYx-KQ-etq" firstAttribute="top" secondItem="blj-Lc-7MJ" secondAttribute="bottom" constant="8" id="muD-Fu-e5y"/>
                             <constraint firstItem="KHB-na-y4t" firstAttribute="leading" secondItem="4hN-c0-0hH" secondAttribute="leadingMargin" id="nf0-ed-CHQ"/>
                             <constraint firstItem="fqz-xl-jGw" firstAttribute="top" secondItem="KHB-na-y4t" secondAttribute="bottom" constant="8" id="rtk-2a-084"/>
                             <constraint firstItem="blj-Lc-7MJ" firstAttribute="leading" secondItem="4hN-c0-0hH" secondAttribute="leadingMargin" id="rwV-0F-fFV"/>
@@ -647,6 +642,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="TVf-FE-WGJ" id="L98-HU-vlF"/>
                         <outlet property="enquiryButton" destination="VYx-KQ-etq" id="Na8-YU-PpJ"/>
+                        <outlet property="mapView" destination="blj-Lc-7MJ" id="amj-wi-tLE"/>
                         <outlet property="secondView" destination="fqz-xl-jGw" id="W0X-ba-G9Y"/>
                         <outlet property="segmentedControl" destination="KHB-na-y4t" id="IDh-dh-lTN"/>
                     </connections>
@@ -673,15 +669,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gRB-bB-00X">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRB-bB-00X">
                                 <rect key="frame" x="0.0" y="101" width="375" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="204" id="57L-fr-ak3"/>
                                     <constraint firstAttribute="width" constant="375" id="NTX-mD-tGP"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Cluster Info Solutions was started in the year 2003 by our Founder/MD Ravi Kumar H. We train students with the current industry demands &amp; IT standards. We offer training on Cutting edge Technologies &amp; Frameworks on Java/JEE Platform at the highest detail. We also provide training on Live Projects which are handled by Project Managers   &amp; Team Leads of reputed software firms.
+We also provide industry-oriented and professional skill development training.
+ 
+ABOUT RAVI KUMAR HADAGALI
+Total Experience: 15 Years
+ravisir
+Mr. Ravi Kumar Hadagali is Java/JEE trainer since 2003 and has completed exams on OCPJP / SCJP , OCPJWCD / SCWCD and he also completed Oracle Certification.
+Mr. Ravi Kumar Hadagali has written 11 fast selling books Core Java, Advanced Java, Database, JDBC, Servlet, JSP, JSF, Spring and Hibernate, EJB and Web Service.
+He delivers the knowledge from grass root level to the architect level.
+He takes classes in a simple flow understood by people from both IT &amp; Non-IT backgrounds.
+Mr.Ravi Kumar Hadagali has vast knowledge on Domains like Finance, Banking, Recruitment, Retail etc.
+Single trainer of Cluster Info Solutions ever since it has started.
+Master in training Core Java, JEE &amp; Database for all levels of students.
+Expert in training Cutting Edge Frameworks like JSF, Spring, Hibernate.
+Specialist in training Web Services, EJB, JPA &amp; Transactions.
+Corporate trainer for reputed Software Firms.
+Favorite among students from all over India</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDP-X7-5mx">
@@ -753,10 +772,10 @@
             </objects>
             <point key="canvasLocation" x="1780" y="1675.4122938530736"/>
         </scene>
-        <!--Batches-->
+        <!--Batch List-->
         <scene sceneID="rpR-cI-8Na">
             <objects>
-                <viewController id="4DL-7G-g0S" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="4DL-7G-g0S" customClass="BatchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nA8-Z9-BqT"/>
                         <viewControllerLayoutGuide type="bottom" id="5oK-zF-T2u"/>
@@ -764,13 +783,40 @@
                     <view key="view" contentMode="scaleToFill" id="76D-TI-mVE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ylm-O3-0N8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="546"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="yqj-4M-HU5">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yqj-4M-HU5" id="9W4-C5-dSW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4DL-7G-g0S" id="cyR-hv-5NG"/>
+                                    <outlet property="delegate" destination="4DL-7G-g0S" id="5QH-Ke-uZN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ylm-O3-0N8" firstAttribute="leading" secondItem="76D-TI-mVE" secondAttribute="leading" id="4Pc-LW-exJ"/>
+                            <constraint firstItem="Ylm-O3-0N8" firstAttribute="top" secondItem="nA8-Z9-BqT" secondAttribute="bottom" id="Jf1-ou-baH"/>
+                            <constraint firstAttribute="trailing" secondItem="Ylm-O3-0N8" secondAttribute="trailing" id="eVs-DG-6zQ"/>
+                            <constraint firstItem="5oK-zF-T2u" firstAttribute="top" secondItem="Ylm-O3-0N8" secondAttribute="bottom" constant="8" symbolic="YES" id="uqa-WI-HoX"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Batches" image="batches-30" id="Iqd-tP-uar"/>
+                    <navigationItem key="navigationItem" title="Batch List" id="fRK-cC-IWd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTK-dg-Tip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="2469"/>
+            <point key="canvasLocation" x="1773.5999999999999" y="2468.8155922038982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NpS-xx-ekp">
@@ -780,6 +826,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wiH-Ex-2BK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.56065122729234074" green="0.88113232084695037" blue="0.91965502500534058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

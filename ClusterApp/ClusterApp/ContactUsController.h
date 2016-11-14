@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ContactUsController : UIViewController
 
+@interface ContactUsController : UIViewController<MKMapViewDelegate>
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+
+@property(strong,nonatomic)NSString* latitude;
+@property(strong,nonatomic)NSString* longitude;
 @end

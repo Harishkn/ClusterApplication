@@ -16,6 +16,8 @@
 		52034C0F1DCCBD5B002B0F31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52034C0D1DCCBD5B002B0F31 /* LaunchScreen.storyboard */; };
 		52034C1A1DCCBD5B002B0F31 /* ClusterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52034C191DCCBD5B002B0F31 /* ClusterAppTests.m */; };
 		52034C251DCCBD5B002B0F31 /* ClusterAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52034C241DCCBD5B002B0F31 /* ClusterAppUITests.m */; };
+		520B600E1DD6D120008868F4 /* BatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520B600D1DD6D120008868F4 /* BatchViewController.m */; };
+		520B60101DD6F90D008868F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520B600F1DD6F90D008868F4 /* CoreLocation.framework */; };
 		520E6F611DD0361300B07C24 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520E6F601DD0361300B07C24 /* QuartzCore.framework */; };
 		520E6F631DD03C4100B07C24 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520E6F621DD03C4100B07C24 /* MapKit.framework */; };
 		520E6F661DD03E3600B07C24 /* ContactUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520E6F651DD03E3600B07C24 /* ContactUsController.m */; };
@@ -28,6 +30,7 @@
 		52D177471DD464770061717F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D177461DD464770061717F /* MobileCoreServices.framework */; };
 		52D177491DD464B10061717F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D177481DD464B10061717F /* MediaPlayer.framework */; };
 		52D1774E1DD47EF70061717F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D1774D1DD47EF70061717F /* MessageUI.framework */; };
+		52E01B231DD9BC5A0045EF95 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E01B221DD9BC5A0045EF95 /* MapAnnotation.m */; };
 		52F2A2941DD5A218008B1BC3 /* About.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F2A2931DD5A218008B1BC3 /* About.m */; };
 		52F2A2971DD5A85D008B1BC3 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F2A2961DD5A85D008B1BC3 /* AboutUsViewController.m */; };
 		52F2A29A1DD5CDBE008B1BC3 /* AboutCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F2A2991DD5CDBE008B1BC3 /* AboutCollectionViewCell.m */; };
@@ -68,6 +71,9 @@
 		52034C201DCCBD5B002B0F31 /* ClusterAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClusterAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52034C241DCCBD5B002B0F31 /* ClusterAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClusterAppUITests.m; sourceTree = "<group>"; };
 		52034C261DCCBD5B002B0F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520B600C1DD6D120008868F4 /* BatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatchViewController.h; sourceTree = "<group>"; };
+		520B600D1DD6D120008868F4 /* BatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatchViewController.m; sourceTree = "<group>"; };
+		520B600F1DD6F90D008868F4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		520E6F601DD0361300B07C24 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		520E6F621DD03C4100B07C24 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		520E6F641DD03E3600B07C24 /* ContactUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsController.h; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 		52D177461DD464770061717F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		52D177481DD464B10061717F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		52D1774D1DD47EF70061717F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		52E01B211DD9BC5A0045EF95 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
+		52E01B221DD9BC5A0045EF95 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		52F2A2921DD5A218008B1BC3 /* About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = About.h; sourceTree = "<group>"; };
 		52F2A2931DD5A218008B1BC3 /* About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = About.m; sourceTree = "<group>"; };
 		52F2A2951DD5A85D008B1BC3 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520B60101DD6F90D008868F4 /* CoreLocation.framework in Frameworks */,
 				52D1774E1DD47EF70061717F /* MessageUI.framework in Frameworks */,
 				52D177491DD464B10061717F /* MediaPlayer.framework in Frameworks */,
 				52D177471DD464770061717F /* MobileCoreServices.framework in Frameworks */,
@@ -179,6 +188,10 @@
 				52F2A2961DD5A85D008B1BC3 /* AboutUsViewController.m */,
 				52F2A2981DD5CDBE008B1BC3 /* AboutCollectionViewCell.h */,
 				52F2A2991DD5CDBE008B1BC3 /* AboutCollectionViewCell.m */,
+				520B600C1DD6D120008868F4 /* BatchViewController.h */,
+				520B600D1DD6D120008868F4 /* BatchViewController.m */,
+				52E01B211DD9BC5A0045EF95 /* MapAnnotation.h */,
+				52E01B221DD9BC5A0045EF95 /* MapAnnotation.m */,
 			);
 			path = ClusterApp;
 			sourceTree = "<group>";
@@ -212,6 +225,7 @@
 		520E6F5F1DD0361300B07C24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				520B600F1DD6F90D008868F4 /* CoreLocation.framework */,
 				52D1774D1DD47EF70061717F /* MessageUI.framework */,
 				52D177481DD464B10061717F /* MediaPlayer.framework */,
 				52D177461DD464770061717F /* MobileCoreServices.framework */,
@@ -355,8 +369,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520B600E1DD6D120008868F4 /* BatchViewController.m in Sources */,
 				520E6F661DD03E3600B07C24 /* ContactUsController.m in Sources */,
 				52F2A2971DD5A85D008B1BC3 /* AboutUsViewController.m in Sources */,
+				52E01B231DD9BC5A0045EF95 /* MapAnnotation.m in Sources */,
 				52034C041DCCBD5B002B0F31 /* ViewController.m in Sources */,
 				525C6C171DD2E369008598EB /* MockTestViewController.m in Sources */,
 				520E6F691DD0601700B07C24 /* LoginViewController.m in Sources */,

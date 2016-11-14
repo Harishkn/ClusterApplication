@@ -56,31 +56,6 @@
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   // [self prepareForSegue:@"show" sender:self];
-   
-//    if (indexPath.row ==2)
-//    {
-//         [self performSegueWithIdentifier:@"Resume" sender:self];
-//    }
-//    switch (indexPath.row) {
-//        case 0:
-//            [self performSegueWithIdentifier:@"Search" sender:self];
-//            break;
-//            case 1:
-//            [self performSegueWithIdentifier:@"Resume" sender:self];
-//            break;
-//        case 2:
-//            [self performSegueWithIdentifier:@"Notes" sender:self];
-//            break;
-//        case 3:
-//            [self performSegueWithIdentifier:@"Notification" sender:self];
-//            break;
-//        case 4:
-//            [self performSegueWithIdentifier:@"" sender:self];
-//            
-//        default:
-//            break;
-//    }
     
     [self performSegueWithIdentifier:[self.imageNames objectAtIndex:indexPath.row] sender:self];
     

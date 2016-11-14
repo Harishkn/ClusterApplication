@@ -7,11 +7,12 @@
 //
 
 #import "ContactUsController.h"
+#import "MapAnnotation.h"
 
 @interface ContactUsController ()
 - (IBAction)enquiryButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-
+@property(nonatomic, retain) CLLocationManager *locationManager;
 
 @property (weak, nonatomic) IBOutlet UIView *secondView;
 @property (weak, nonatomic) IBOutlet UIButton *enquiryButton;
@@ -24,11 +25,42 @@
 @end
 
 @implementation ContactUsController
+@synthesize mapView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+     self.mapView.delegate = self;
+    
+    mapView.delegate = self;
+    mapView.centerCoordinate = CLLocationCoordinate2DMake(12.9634, 77.5339);
+    mapView.mapType = MKMapTypeHybrid;
+    CLLocationCoordinate2D location;
+    location.latitude = (double) 12.9634;
+    
+    location.longitude = (double) 77.5339;
+    // Add the annotation to our map view
+    MapAnnotation *newAnnotation = [[MapAnnotation alloc]
+                                    initWithTitle:@"Vijay Nagar Branch" andCoordinate:location];
+    [mapView addAnnotation:newAnnotation];
+    CLLocationCoordinate2D location2;
+    location2.latitude = (double) 12.9634;
+    location2.longitude = (double) 77.5339 ;
+    MapAnnotation *newAnnotation2 = [[MapAnnotation alloc]
+                                     initWithTitle:@"Vijay Nagar Branch" andCoordinate:location2];
+    [mapView addAnnotation:newAnnotation2];
+    [self.view addSubview:mapView];
+}
+// When a map annotation point is added, zoom to it (1500 range)
+- (void)mapView:(MKMapView *)mv didAddAnnotationViews:(NSArray *)views
+{
+    MKAnnotationView *annotationView = [views objectAtIndex:0];
+    id <MKAnnotation> mp = [annotationView annotation];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance
+    ([mp coordinate], 1500, 1500);
+    [mv setRegion:region animated:YES];
+    [mv selectAnnotation:mp animated:YES];
+
     self.secondView.layer.cornerRadius=5;
     self.enquiryButton.layer.cornerRadius=5;
     
@@ -70,11 +102,47 @@
     if ([self.segmentedControl selectedSegmentIndex]==0)
     {
         self.addressLabel.text = [NSString stringWithFormat:@"%@",self.vijAddress];
+        mapView.centerCoordinate = CLLocationCoordinate2DMake(12.9634, 77.5339);
+        mapView.mapType = MKMapTypeHybrid;
+        CLLocationCoordinate2D location;
+        location.latitude = (double) 12.9634;
+        
+        location.longitude = (double) 77.5339;
+        // Add the annotation to our map view
+        MapAnnotation *newAnnotation = [[MapAnnotation alloc]
+                                        initWithTitle:@"Vijay Nagar Branch" andCoordinate:location];
+        [mapView addAnnotation:newAnnotation];
+        CLLocationCoordinate2D location2;
+        location2.latitude = (double) 12.9634;
+        location2.longitude = (double) 77.5339 ;
+        MapAnnotation *newAnnotation2 = [[MapAnnotation alloc]
+                                         initWithTitle:@"Vijay Nagar Branch" andCoordinate:location2];
+        [mapView addAnnotation:newAnnotation2];
+        [self.view addSubview:mapView];
+
     
     }
     else
     {
         self.addressLabel.text = [NSString stringWithFormat:@"%@",self.rajAddress];
+        
+        mapView.centerCoordinate = CLLocationCoordinate2DMake(12.9801, 77.5554);
+        mapView.mapType = MKMapTypeHybrid;
+        CLLocationCoordinate2D location;
+        location.latitude = (double) 12.9801;
+        
+        location.longitude = (double) 77.5554;
+        // Add the annotation to our map view
+        MapAnnotation *newAnnotation = [[MapAnnotation alloc]
+                                        initWithTitle:@"Rajaji Nagar Branch" andCoordinate:location];
+        [mapView addAnnotation:newAnnotation];
+        CLLocationCoordinate2D location2;
+        location2.latitude = (double) 12.9801;
+        location2.longitude = (double) 77.5554 ;
+        MapAnnotation *newAnnotation2 = [[MapAnnotation alloc]
+                                         initWithTitle:@"Rajaji Nagar Branch" andCoordinate:location2];
+        [mapView addAnnotation:newAnnotation2];
+        [self.view addSubview:mapView];
     }
 }
 - (IBAction)enquiryButton:(id)sender
@@ -94,4 +162,8 @@
     
     
      }
+
+
+
+
 @end
