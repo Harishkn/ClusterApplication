@@ -26,6 +26,7 @@
 		525C6C1A1DD2E40E008598EB /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C6C191DD2E40E008598EB /* CollectionViewCell.m */; };
 		525C6C1D1DD2E955008598EB /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C6C1C1DD2E955008598EB /* HomeCollectionViewCell.m */; };
 		525C6C201DD2E9BC008598EB /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C6C1F1DD2E9BC008598EB /* WelcomeViewController.m */; };
+		52A1DA5B1DDAE92900966857 /* JoinUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A1DA5A1DDAE92900966857 /* JoinUsViewController.m */; };
 		52D177451DD460F30061717F /* VideoResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D177441DD460F30061717F /* VideoResumeViewController.m */; };
 		52D177471DD464770061717F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D177461DD464770061717F /* MobileCoreServices.framework */; };
 		52D177491DD464B10061717F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D177481DD464B10061717F /* MediaPlayer.framework */; };
@@ -88,6 +89,8 @@
 		525C6C1C1DD2E955008598EB /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		525C6C1E1DD2E9BC008598EB /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		525C6C1F1DD2E9BC008598EB /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		52A1DA591DDAE92900966857 /* JoinUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinUsViewController.h; sourceTree = "<group>"; };
+		52A1DA5A1DDAE92900966857 /* JoinUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinUsViewController.m; sourceTree = "<group>"; };
 		52D177431DD460F30061717F /* VideoResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoResumeViewController.h; sourceTree = "<group>"; };
 		52D177441DD460F30061717F /* VideoResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoResumeViewController.m; sourceTree = "<group>"; };
 		52D177461DD464770061717F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -192,6 +195,8 @@
 				520B600D1DD6D120008868F4 /* BatchViewController.m */,
 				52E01B211DD9BC5A0045EF95 /* MapAnnotation.h */,
 				52E01B221DD9BC5A0045EF95 /* MapAnnotation.m */,
+				52A1DA591DDAE92900966857 /* JoinUsViewController.h */,
+				52A1DA5A1DDAE92900966857 /* JoinUsViewController.m */,
 			);
 			path = ClusterApp;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				52034C041DCCBD5B002B0F31 /* ViewController.m in Sources */,
 				525C6C171DD2E369008598EB /* MockTestViewController.m in Sources */,
 				520E6F691DD0601700B07C24 /* LoginViewController.m in Sources */,
+				52A1DA5B1DDAE92900966857 /* JoinUsViewController.m in Sources */,
 				52034C011DCCBD5B002B0F31 /* AppDelegate.m in Sources */,
 				525C6C201DD2E9BC008598EB /* WelcomeViewController.m in Sources */,
 				52034C0A1DCCBD5B002B0F31 /* ClusterApp.xcdatamodeld in Sources */,
