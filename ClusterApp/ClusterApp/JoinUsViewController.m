@@ -12,6 +12,8 @@
 - (IBAction)cancelButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *profilePhoto;
 
+@property(strong,nonatomic)UITextField* activeField;
+
 @end
 
 @implementation JoinUsViewController
@@ -20,6 +22,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.imagePic.layer.cornerRadius =50;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +64,8 @@
 
 - (IBAction)pickerDone:(id)sender
 {
-    [self.secondView setHidden:true];
+    [self.toolBar setHidden:true];
+    [self.pickerView setHidden:true];
     
 }
 - (void) imagePickerController:(UIImagePickerController *)picker
@@ -84,6 +93,69 @@
 
 - (IBAction)DobButton:(id)sender
 {
-    [self.secondView setHidden:false];
+    [self.toolBar setHidden:false];
+    [self.pickerView setHidden:false];
 }
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your app might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
+        [self.scrollView scrollRectToVisible:self.activeField.frame animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.activeField = textField;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.activeField = nil;
+    //[textField resignFirstResponder];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [textField resignFirstResponder];
+    return YES;
+}
+-(void)didTapAnywhere: (UITapGestureRecognizer*) recognizer {
+    [self.activeField resignFirstResponder];
+}
+
 @end

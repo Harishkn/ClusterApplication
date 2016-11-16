@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *pickerView;
 - (IBAction)DobButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePic;
 
 - (IBAction)loadImage:(id)sender;
