@@ -48,18 +48,42 @@
     UIImagePickerController *pickerController = [[UIImagePickerController alloc]
                                                  init];
     pickerController.delegate = self;
-    [self presentModalViewController:pickerController animated:YES];
+    //[self presentModalViewController:pickerController animated:YES];
+    
+    [self presentViewController:pickerController animated:YES completion:nil];
+    
+}
+
+- (IBAction)pickerDone:(id)sender
+{
+    [self.secondView setHidden:true];
+    
 }
 - (void) imagePickerController:(UIImagePickerController *)picker
          didFinishPickingImage:(UIImage *)image
                    editingInfo:(NSDictionary *)editingInfo
 {
-    self.imagePic.image = image;
+    //self.imagePic.image = image;
+    
+    NSData *picData = UIImagePNGRepresentation(image);
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:picData forKey:@"image"];
+    [defaults synchronize];
+    
+    
+    NSData* imageData = [defaults dataForKey:@"image"];
    
-    [self dismissModalViewControllerAnimated:YES];
+    self.imagePic.image = [UIImage imageWithData:imageData];
+   
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 
 
+- (IBAction)DobButton:(id)sender
+{
+    [self.secondView setHidden:false];
+}
 @end

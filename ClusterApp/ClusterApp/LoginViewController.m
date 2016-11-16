@@ -69,7 +69,8 @@
     
     mediaUI.delegate = delegate;
     
-    [controller presentModalViewController: mediaUI animated: YES];
+   // [controller presentModalViewController: mediaUI animated: YES];
+    [controller presentViewController:mediaUI animated:YES completion:nil];
     return YES;
 }
 
