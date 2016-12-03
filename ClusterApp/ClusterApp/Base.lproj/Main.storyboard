@@ -120,7 +120,8 @@
                             <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXm-er-uQT">
                                 <rect key="frame" x="0.0" y="460" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="UdQ-cW-acy">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AAZ-Y7-WM9"/>
+                                    <barButtonItem title="Done" id="UdQ-cW-acy">
                                         <connections>
                                             <action selector="pickerDone:" destination="lTe-XD-e7L" id="VMl-31-TGJ"/>
                                         </connections>
@@ -265,6 +266,7 @@
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="2Ve-j2-o3W" firstAttribute="top" secondItem="ZbS-r9-0lj" secondAttribute="bottom" constant="8" id="06e-rO-Jap"/>
                                             <constraint firstItem="nKy-no-Euq" firstAttribute="top" secondItem="NFI-gw-6q0" secondAttribute="bottom" constant="8" id="0VH-vV-FZE"/>
@@ -305,6 +307,9 @@
                                             <constraint firstItem="Gr5-cw-naf" firstAttribute="top" secondItem="nKy-no-Euq" secondAttribute="bottom" constant="8" id="wIX-vo-rvX"/>
                                             <constraint firstItem="FCl-yz-7be" firstAttribute="top" secondItem="6Hg-RG-Dc1" secondAttribute="bottom" constant="8" id="xch-nV-Gbc"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="r8e-og-rpm" appends="YES" id="wae-4d-EHL"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -318,6 +323,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="a58-bo-Fve" firstAttribute="top" secondItem="Sty-Wg-Gfh" secondAttribute="bottom" id="52H-h5-19h"/>
                             <constraint firstItem="Yrz-YT-Qhy" firstAttribute="leading" secondItem="epO-DG-Xu5" secondAttribute="leading" id="EBz-mC-Ajo"/>
@@ -330,6 +336,9 @@
                             <constraint firstItem="Yrz-YT-Qhy" firstAttribute="top" secondItem="OfT-Jv-uxA" secondAttribute="bottom" id="tjQ-yf-E6L"/>
                             <constraint firstAttribute="trailing" secondItem="Yrz-YT-Qhy" secondAttribute="trailing" id="y5e-x7-woc"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="r8e-og-rpm" appends="YES" id="nkz-L8-Xzb"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Join Us" id="jG6-Eh-ieD">
@@ -342,17 +351,24 @@
                         <barButtonItem key="rightBarButtonItem" title="Done" id="coe-e7-jSQ">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="QCp-gM-jeT" kind="show" id="wSz-cn-2lU"/>
+                                <action selector="doneButton:" destination="lTe-XD-e7L" id="pF1-6W-vSB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="alternateNumberField" destination="2Ve-j2-o3W" id="vjC-0k-wwC"/>
+                        <outlet property="dobButtonOutlet" destination="nKy-no-Euq" id="0SL-G0-Saa"/>
+                        <outlet property="emailField" destination="PR1-r9-GQh" id="aZF-g1-4h8"/>
+                        <outlet property="genderSegment" destination="YQl-k1-WLS" id="uxR-dO-VNk"/>
                         <outlet property="imagePic" destination="z8o-6t-TgL" id="X0O-Oc-gHt"/>
+                        <outlet property="mobileNumberField" destination="6Hg-RG-Dc1" id="TYy-yB-nL1"/>
+                        <outlet property="nameField" destination="KTE-90-9Nk" id="aK2-06-aFW"/>
                         <outlet property="pickerDone" destination="UdQ-cW-acy" id="bOn-YD-g3i"/>
                         <outlet property="pickerView" destination="Sty-Wg-Gfh" id="Bnc-qN-JwB"/>
                         <outlet property="scrollView" destination="Yrz-YT-Qhy" id="fos-uy-kxV"/>
                         <outlet property="toolBar" destination="pXm-er-uQT" id="Lyh-ld-SRd"/>
+                        <segue destination="QCp-gM-jeT" kind="show" identifier="login" id="7DZ-yc-4XK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="arH-9z-ReV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,6 +377,7 @@
                         <action selector="loadImage:" destination="lTe-XD-e7L" id="Obz-Xr-IjW"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="r8e-og-rpm"/>
             </objects>
             <point key="canvasLocation" x="3071.1999999999998" y="-559.97001499250382"/>
         </scene>
@@ -431,13 +448,19 @@
                                         <rect key="frame" x="8" y="78" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="QCp-gM-jeT" id="bD7-F5-exx"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcB-Pw-5fJ">
                                         <rect key="frame" x="8" y="116" width="327" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="QCp-gM-jeT" id="RhS-pZ-F6O"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npq-zb-rEJ">
                                         <rect key="frame" x="111" y="154" width="121" height="51"/>
@@ -873,9 +896,12 @@
                                     <constraint firstAttribute="height" constant="160" id="SF1-s9-lOB"/>
                                 </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYx-KQ-etq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYx-KQ-etq">
                                 <rect key="frame" x="108" y="410" width="158" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="158" id="hzt-Ju-kRl"/>
+                                    <constraint firstAttribute="height" constant="86" id="khf-qL-rib"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Enquiry">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -890,9 +916,11 @@
                         <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KHB-na-y4t" firstAttribute="top" secondItem="TrA-8c-qyN" secondAttribute="bottom" constant="8" id="02M-zY-OHM"/>
+                            <constraint firstItem="VYx-KQ-etq" firstAttribute="top" secondItem="blj-Lc-7MJ" secondAttribute="bottom" constant="8" id="AF4-UB-Uiu"/>
                             <constraint firstItem="fqz-xl-jGw" firstAttribute="leading" secondItem="4hN-c0-0hH" secondAttribute="leadingMargin" id="KWr-8G-hGd"/>
                             <constraint firstItem="blj-Lc-7MJ" firstAttribute="trailing" secondItem="4hN-c0-0hH" secondAttribute="trailingMargin" id="Vnj-Ro-QWh"/>
                             <constraint firstItem="blj-Lc-7MJ" firstAttribute="top" secondItem="fqz-xl-jGw" secondAttribute="bottom" constant="8" id="XOX-Kg-owX"/>
+                            <constraint firstItem="VYx-KQ-etq" firstAttribute="centerX" secondItem="4hN-c0-0hH" secondAttribute="centerX" id="aOH-0D-5l2"/>
                             <constraint firstItem="fqz-xl-jGw" firstAttribute="trailing" secondItem="4hN-c0-0hH" secondAttribute="trailingMargin" id="lUB-3y-LYa"/>
                             <constraint firstItem="KHB-na-y4t" firstAttribute="leading" secondItem="4hN-c0-0hH" secondAttribute="leadingMargin" id="nf0-ed-CHQ"/>
                             <constraint firstItem="fqz-xl-jGw" firstAttribute="top" secondItem="KHB-na-y4t" secondAttribute="bottom" constant="8" id="rtk-2a-084"/>
@@ -1054,7 +1082,7 @@ Favorite among students from all over India</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yqj-4M-HU5" id="9W4-C5-dSW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1152,6 +1180,6 @@ Favorite among students from all over India</string>
         <image name="batches-30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wSz-cn-2lU"/>
+        <segue reference="7DZ-yc-4XK"/>
     </inferredMetricsTieBreakers>
 </document>
